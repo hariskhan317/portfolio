@@ -1,10 +1,8 @@
 import React from 'react';
-import { Container, Typography, Box, useTheme } from '@mui/material';
+import { Container, Typography, Box } from '@mui/material';
 import { motion } from 'framer-motion';
 
 const Home = () => {
-  const theme = useTheme();
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

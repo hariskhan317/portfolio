@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   Container,
   Typography,
@@ -11,20 +11,24 @@ import {
 import { motion } from 'framer-motion';
 import JavaScriptIcon from '@mui/icons-material/Javascript';
 import CodeIcon from '@mui/icons-material/Code';
-import HtmlIcon from '@mui/icons-material/Html';
 import CssIcon from '@mui/icons-material/Css';
 import WebIcon from '@mui/icons-material/Web';
 import StorageIcon from '@mui/icons-material/Storage';
 import DataObjectIcon from '@mui/icons-material/DataObject';
 import ApiIcon from '@mui/icons-material/Api';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
-import SettingsIcon from '@mui/icons-material/Settings';
+
+interface Skill {
+  name: string;
+  icon: React.ReactNode;
+  proficiency: number;
+}
 
 const Skills = () => {
   const theme = useTheme();
-  const skills = [
+  
+  const skills: Skill[] = [
     { name: 'JavaScript', icon: <JavaScriptIcon sx={{ fontSize: 40 }} />, proficiency: 90 },
     { name: 'TypeScript', icon: <CodeIcon sx={{ fontSize: 40 }} />, proficiency: 85 },
     { name: 'React.js', icon: <WebIcon sx={{ fontSize: 40 }} />, proficiency: 88 },

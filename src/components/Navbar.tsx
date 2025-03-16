@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -9,7 +10,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
   useTheme,
   useMediaQuery,
   Box,
@@ -19,13 +19,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { motion, AnimatePresence } from 'framer-motion';
 
+interface MenuItem {
+  text: string;
+  id: string;
+}
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { text: 'Home', id: 'home' },
     { text: 'Experience', id: 'experience' },
     { text: 'Skills', id: 'skills' },
